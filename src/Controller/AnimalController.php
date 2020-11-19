@@ -2,15 +2,20 @@
 
 namespace App\Controller;
 
+use App\Entity\Animal;
 use App\Repository\AnimalRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AnimalController extends AbstractController
 {
     /**
-     * @Route("/", name="animals")
+     * Permet d'afficher la page d'acceuil
+     * 
+     * @Route("/", name="home")
+     * 
+     * @return Response
      */
     public function index(AnimalRepository $animals): Response
     {
@@ -18,5 +23,23 @@ class AnimalController extends AbstractController
             "animals" => $animals->findAll()
         ]);
     }
+
+    /**
+     * Permet de récupérer un animal
+     * 
+     * @Route("/animal/{id}", name="show_animal")
+     *
+     * @param Animal $animals
+     * 
+     * @return Response
+     */
+    public function show(Animal $animal) 
+    {
+        return $this->render('animal/show.html.twig',[
+            "animal" => $animal
+        ]);
+
+    }
+
 
 }

@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-2 my-3 text-center">
+        <a href="{{ path('show_animal', {id : animal.id}) }}"><img src="{{ asset('build/images/' ~ animal.name ~'.png') }}" alt="{{ animal.name }}"></a>
+    </div>
+    <div class="col my-5 text-center">
+        <a href="{{ path('show_animal', {id : animal.id}) }}"><h2>{{animal.name}}</h2></a>
+        <p>{{ animal.description }}</p>
+        <div class = "mb-2"><a href="{{ path('show_animals_familly', { id : animal.familly.id }) }}" class="btn btn-primary">{{ animal.familly.name }}</a></div>
+        {% for continent in animal.continents %}
+            <a href="{{ path('continent_animals', { id : continent.id }) }}" class="btn btn-warning">{{ continent.name }}</a>
+        {% endfor %}
+    </div>
+</div>   

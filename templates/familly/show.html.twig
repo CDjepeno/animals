@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Liste d'animaux par famille{% endblock %}
+
+{% block monTitre %}Liste des {{ familly.name }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        {% for animal in familly.animals %}
+              {% include "partials/_animal.html.twig" %}
+        {% endfor %}
+    </div>
+{% endblock %}

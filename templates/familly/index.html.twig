@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FamillyController!{% endblock %}
+
+{% block monTitre %}Voici la liste des Familles{% endblock %}
+{% block body %}
+    {% for familly in famillies %}
+        {% include "partials/_animal_cat.html.twig" %}
+    {% endfor %}
+    
+{% endblock %}
