@@ -4,9 +4,15 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+        {{ encore_entry_link_tags('css/app') }}
+
     </head>
     <body>
+        {% include "partials/_navbar.html.twig" %}
+        <h1 class="border border-dark rounded p-2 m-2 text-white bg-secondary">{% block monTitre %}{% endblock %}</h1>
+        <div class="container">
         {% block body %}{% endblock %}
+        </div>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AnimalController!{% endblock %}
+
+{% block monTitre %}Voici la liste des animaux{% endblock %}
+{% block body %}
+
+{% for animal in animals %}
+    <div class="row">
+        <div class="col-2 my-3 text-center">
+            <img src="{{ asset('build/images/' ~ animal.name ~'.png') }}" alt="{{ animal.name }}">
+        </div>
+        <div class="col my-5 text-center">
+        <h2>{{animal.name}}</h2>
+        <p>{{ animal.description }}</p>
+
+        </div>
+    </div>   
+    {{animal.name}}    
+{% endfor %}
+
+
+{% endblock %}
