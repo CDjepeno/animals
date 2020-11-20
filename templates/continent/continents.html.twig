@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Continents{% endblock %}
+
+{% block monTitre %}Voici la liste des continents{% endblock %}
+
+{% block body %}
+    {% for continent in continents %}
+    <a href="{{ path('show_animals_continent', { id : continent.id }) }}"><h2 class="border-bottom border-primary my-5">{{ continent.name|capitalize }}</h2></a>
+        {% for animal in continent.animals %}
+            {% include "partials/_animals_cat.html.twig" %}
+        {% endfor %}
+    {% endfor %}
+{% endblock %}

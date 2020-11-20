@@ -5,7 +5,9 @@
 {% block monTitre %}Voici la liste des Familles{% endblock %}
 {% block body %}
     {% for familly in famillies %}
-        {% include "partials/_animal_cat.html.twig" %}
-    {% endfor %}
-    
+    <a href="{{ path('show_animals_familly', { id : familly.id }) }}"><h2 class="border-bottom border-primary my-5">{{ familly.name|capitalize }}</h2></a>
+        {% for animal in familly.animals %}
+            {% include "partials/_animals_cat.html.twig" %}
+        {% endfor %}
+    {% endfor %} 
 {% endblock %}

@@ -5,9 +5,14 @@
     <div class="col my-5 text-center">
         <a href="{{ path('show_animal', {id : animal.id}) }}"><h2>{{animal.name}}</h2></a>
         <p>{{ animal.description }}</p>
-        <div class = "mb-2"><a href="{{ path('show_animals_familly', { id : animal.familly.id }) }}" class="btn btn-primary">{{ animal.familly.name }}</a></div>
+        <div class = "mb-3"><a href="{{ path('show_animals_familly', { id : animal.familly.id }) }}" class="btn btn-primary">{{ animal.familly.name }}</a></div>
+        <h3>Présence de l'animal sur le continent :</h3>
         {% for continent in animal.continents %}
-            <a href="{{ path('continent_animals', { id : continent.id }) }}" class="btn btn-warning">{{ continent.name }}</a>
+            <a href="{{ path('show_animals_continent', { id : continent.id }) }}" class="btn btn-warning">{{ continent.name }}</a>
+        {% endfor %}
+        <h3 class="mt-3">Listes des personnes en possédant : </h3>
+        {% for dispose in animal.disposes %}
+            <a href="{{ path('show_personne_animals', { id : dispose.personne.id }) }}" class="btn btn-danger">{{ dispose.personne.name }}</a>
         {% endfor %}
     </div>
 </div>   

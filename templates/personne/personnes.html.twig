@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Liste des personnages{% endblock %}
+
+{% block monTitre %}Voici la liste des personnes{% endblock %}
+
+{% block body %}
+ {% for personne in personnes %}
+    <a href="{{ path('show_personne_animals', { id : personne.id }) }}"><h2 class="border-bottom border-primary my-5">{{ personne.name|capitalize }}</h2></a>
+        {% for dispose in personne.disposes %}
+            {% include "partials/_animals_cat.html.twig" %}
+        {% endfor %}
+    {% endfor %}
+{% endblock %}

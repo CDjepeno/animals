@@ -1,0 +1,38 @@
+<div class="row align-items-center">
+    {% if familly is defined %}   
+        <div class="col-6">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 col-lg-2 align-items-center my-2">
+                    <img src="{{ asset('build/images/' ~ animal.name ~ '.png') }}" alt="{{ animal.name }}" class="img-fluid">
+                </div>
+                <div class="col  text-center align-items-center">
+                    <h2><a href="{{ path('show_animal', { id : animal.id } ) }}">{{ animal.name }}</a></h2>
+                    <div>{{ familly.description }}</div>
+                </div>
+            </div>
+        </div>
+    {% elseif continent is defined %}
+        <div class="col-6">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 col-lg-2 align-items-center my-2">
+                    <img src="{{ asset('build/images/' ~ animal.name ~ '.png') }}" alt="{{ animal.name }}" class="img-fluid">
+                </div>
+                <div class="col text-center">
+                    <h2><a href="{{ path('show_animal', { id : animal.id } ) }}">{{ animal.name }}</a></h2>
+                </div>
+            </div>
+        </div>
+    {% elseif dispose is defined %}
+        <div class="col-6">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 col-lg-2 align-items-center my-2">
+                    <img src="{{ asset('build/images/' ~ dispose.animal.name ~ '.png') }}" alt="{{ dispose.animal.name }}" class="img-fluid">
+                </div>
+                <div class="col text-center">
+                    <h2><a href="{{ path('show_animal', { id : dispose.animal.id } ) }}">{{ dispose.animal.name }}</a></h2>
+                    <p>Nombre : {{ dispose.nb }}</p>
+                </div>
+            </div>
+        </div>
+    {% endif %}      
+</div>
