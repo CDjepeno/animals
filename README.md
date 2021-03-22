@@ -16,6 +16,24 @@
 ![Webpack-100x100](https://user-images.githubusercontent.com/43074465/98483244-f164df00-2206-11eb-899e-f7e096dc9c85.png)
 ![icon](https://user-images.githubusercontent.com/43074465/98969194-e5329780-250e-11eb-8b4b-40c3c1edad88.png)
 
-# Features
+## Features
 - Fixtures
 - CRUD
+- Agrégation
+
+## Getting Started
+```bash
+$ git clone https://github.com/CDjepeno/animals.git
+```
+```bash
+$ cd animals
+```
+```bash
+$ composer install
+$ npm install
+```
+```bash
+$ Symfony server-start -d
+or
+$ php -S localhost:8000 -t public
+```
